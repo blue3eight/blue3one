@@ -17,4 +17,15 @@ def revalLBSImage(imagePath,nbits=1):
             b = getLBS(b,nbits)
             img.putpixel((col,row),(r,g,b))
     return img
-#imshow(np.resize(np.array(fg),(100,100)))
+
+ def split_by_n( seq, n ):
+   """A generator to divide a sequence into chunks of n units."""
+   while seq:
+       yield seq[:n]
+       seq = seq[n:]
+
+def triplexTobin(l):
+    txt=""
+    for a,b,c in l:
+        txt=txt+str(a)+str(b)+str(c)
+    return txt
