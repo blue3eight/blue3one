@@ -7,10 +7,10 @@ def revalLBSImage(imgage_or_imagePath, nbits=1):
         byte = byte << 8 - n
         return byte
   
-    if isinstance(imgage_or_imagePath, str):
-        img = Image.open(imgage_or_imagePath)
+    if isinstance(imgage_or_imagePath, Image.Image):
+        img = imgage_or_imagePath  
     else :
-        img = imgage_or_imagePath
+        img = Image.open(imgage_or_imagePath)
         
     width,heigh = img.size
     if img.mode == 'RGB' :
